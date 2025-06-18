@@ -44,7 +44,6 @@ class TestForgettingCurve:
         """
         endpoint = UserEndpoint()
         with allure.step('Создаю макет нового пользователя и провожу валидацию'):
-            #payload = pl.get_new_user()
             validator(payload,UserSchema)
         with allure.step(f'Отправляю запрос на создание нового пользователя ({payload['nickname']})'):
             endpoint.create_user(payload)
@@ -61,8 +60,7 @@ class TestForgettingCurve:
     def test_update_user_data(self,payload):
         """
         Тест отправляет запрос на обновление данных пользователя и проверяет
-        эти изменения. Проводит валидацию данных до отправки
-        и после.
+        эти изменения. Проводит валидацию данных после обновления.
         """
         endpoint = UserEndpoint()
         with allure.step('Создаю макет json для обновления данных. Генерирую новые данные'):
@@ -93,7 +91,7 @@ class TestForgettingCurve:
         with allure.step('Ожидаю статус код 200'):
             assert endpoint.status_code == 200, endpoint.text
         with allure.step('Отправляю запрос на получение данных об удаленном пользователе'):
-            endpoint.get_user(random_user['nickname'])
+            assert endpoint.get_user(random_user['nickname'])
         with allure.step('Проверяю его отсутствие в списке всех пользователей'):
             assert endpoint.status_code == 404, endpoint.text
 

@@ -32,24 +32,24 @@ class BaseEndpoint:
     def post(self,payload=''):
         post = requests.post(f'{self.main_url}/{self.endpoint_name}',json=payload)
         self.setup_attributes(post)
-        return post
+        return self
 
 
     def get(self,payload=''):
         get = requests.get(f'{self.main_url}/{self.endpoint_name}/{payload}')
         self.setup_attributes(get)
-        return get
+        return self
 
 
     def put(self,obj,payload=''):
         put = requests.put(f'{self.main_url}/{self.endpoint_name}/{obj}',json=payload)
         self.setup_attributes(put)
-        return put
+        return self
 
 
     def delete(self,obj):
         delete = requests.delete(f'{self.main_url}/{self.endpoint_name}/{obj}')
         self.setup_attributes(delete)
-        return delete
+        return self
 
 
