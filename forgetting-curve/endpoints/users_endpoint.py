@@ -14,7 +14,7 @@ class UserEndpoint(BaseEndpoint):
         отсутствие параметра nickname = получить всех пользователей.
         Возвращает словарь с пользователями и их полями
         """
-        self.get(self.endpoint_name, nickname)
+        self.get(nickname)
         return self.get_json()
 
 
@@ -23,7 +23,7 @@ class UserEndpoint(BaseEndpoint):
         Метод отправляет запрос на создание пользователя,
         требует передачи в параметры всех полей
         """
-        self.post(self.endpoint_name,payload)
+        self.post(payload)
         return self
 
 
@@ -31,7 +31,7 @@ class UserEndpoint(BaseEndpoint):
         """
         Метод отправляет запрос на обновление данных пользователя
         """
-        self.put(self.endpoint_name,nickname,payload)
+        self.put(nickname,payload)
         return self
 
 
@@ -39,7 +39,7 @@ class UserEndpoint(BaseEndpoint):
         """
         Метод отправляет запрос на удаление пользователя
         """
-        self.delete(self.endpoint_name,nickname)
+        self.delete(nickname)
         return self
 
 
