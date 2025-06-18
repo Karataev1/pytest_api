@@ -3,7 +3,6 @@ from schemas.user_schema import UserSchema
 import random
 
 
-
 class PayLoads:
 
     @staticmethod

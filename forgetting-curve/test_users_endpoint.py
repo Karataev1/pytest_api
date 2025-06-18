@@ -7,7 +7,6 @@ import pytest
 import allure
 import random
 
-
 validator = Validation.validator
 
 

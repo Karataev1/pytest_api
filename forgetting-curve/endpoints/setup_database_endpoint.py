@@ -1,5 +1,6 @@
 from endpoints.base_endpoint import BaseEndpoint
 
+
 class SetupDataBaseEndpoint(BaseEndpoint):
     def __init__(self):
         super().__init__()

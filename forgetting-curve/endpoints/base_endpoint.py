@@ -1,6 +1,5 @@
 import requests
 
-
 class BaseEndpoint:
     """
     При наследовании от этого класса, нужно переопределить имя ручки (self.main_url)

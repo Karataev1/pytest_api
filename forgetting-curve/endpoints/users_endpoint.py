@@ -49,3 +49,4 @@ class UserEndpoint(BaseEndpoint):
         """
         random_user = self.get_user()[random.randint(0, len(self.get_json()) - 1)]
         return random_user
+
