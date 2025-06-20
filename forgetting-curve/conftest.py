@@ -14,10 +14,9 @@ def get_new_user(request):
     new_user = pl.get_new_user()
     create_endpoint = UserEndpoint()
     create_endpoint.create_user(new_user)
-    """    time.sleep(1)
-        def fin():
-            create_endpoint.delete_user(new_user['nickname'])
-        request.addfinalizer(fin)"""
+    def fin():
+        create_endpoint.delete_user(new_user['nickname'])
+    request.addfinalizer(fin)
     yield new_user['nickname']
 
 
