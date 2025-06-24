@@ -15,7 +15,7 @@ def validation_response():
 
 
 @pytest.fixture()
-def create_user(users):
+def create_user_and_delete(users):
     """
     Фикстура создает пользователя и возвращает его никнейм, после отправляет запрос на его удаление
     :return: data['nickname']
